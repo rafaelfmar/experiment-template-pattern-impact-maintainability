@@ -1,5 +1,6 @@
 package br.edu.utfpr.dv.sireata.dao;
 
+import java.io.Serializable;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -9,8 +10,15 @@ import java.util.ArrayList;
 import java.util.List;
 
 import br.edu.utfpr.dv.sireata.model.Pauta;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.NoArgsConstructor;
+import org.springframework.stereotype.Service;
 
-public class PautaDAO {
+import javax.persistence.Entity;
+
+@Service
+public class PautaDAO  implements Serializable {
 	
 	public Pauta buscarPorId(int id) throws SQLException{
 		Connection conn = null;
